@@ -11,6 +11,23 @@
             margin: 0;
             padding: 0;
         }
+        body {
+    background: linear-gradient(45deg, #FF5733, #FFD700, #4CAF50, #C95B3A);
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite;
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+        h1 {
+            margin: 0;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
         .container {
             display: flex;
             justify-content: space-between;
@@ -34,9 +51,11 @@
         }
         .pizza-display {
             border-radius: 50%;
-            background: orange;
-            border: 2px solid brown;
             transition: width 0.3s, height 0.3s;
+            background-image: url('Pizza2.jpg'); /* Substitua pelo caminho correto da imagem */
+            background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
         }
         .input-table {
             width: 80%;
@@ -48,6 +67,7 @@
         input {
             width: 80px;
         }
+        
     </style>
 </head>
 <body>
@@ -97,14 +117,14 @@
             let preco1 = parseFloat(document.getElementById("preco1").value) / parseInt(document.getElementById("quantidade1").value);
             let preco2 = parseFloat(document.getElementById("preco2").value) / parseInt(document.getElementById("quantidade2").value);
             
-            let area1 = Math.PI * Math.pow(tamanho1 / 2, 2);
-            let area2 = Math.PI * Math.pow(tamanho2 / 2, 2);
+            //let area1 = Math.PI * Math.pow(tamanho1 / 2, 2);
+            //let area2 = Math.PI * Math.pow(tamanho2 / 2, 2);
             
-            let custo1 = preco1 / area1;
-            let custo2 = preco2 / area2;
+            let custo1 = preco1 / tamanho1;
+            let custo2 = preco2 / tamanho2;
             
-            document.getElementById("custo1").innerText = `Preço por cm²: R$ ${custo1.toFixed(4)}`;
-            document.getElementById("custo2").innerText = `Preço por cm²: R$ ${custo2.toFixed(4)}`;
+            document.getElementById("custo1").innerText = `Preço por cm²: R$ ${custo1.toFixed(2)}`;
+            document.getElementById("custo2").innerText = `Preço por cm²: R$ ${custo2.toFixed(2)}`;
             
             let resultado = custo1 < custo2 ? "A Pizza 1 vale mais a pena!" : "A Pizza 2 vale mais a pena!";
             if (Math.abs(custo1 - custo2) < 0.001) resultado = "Ambas as pizzas têm custo-benefício similar!";
