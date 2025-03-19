@@ -67,11 +67,15 @@
         input {
             width: 80px;
         }
+        .resultado {
+    padding-top: 100px; /* Ajuste esse valor conforme necessário */
+}
         
     </style>
 </head>
 <body>
     <h1>Calculadora de Pizza</h1>
+    <h2 id="resultado"></h2>
     <div class="container">
         <div class="pizza">
             <div class="pizza-wrapper">
@@ -96,7 +100,6 @@
             <h3 id="custo2"></h3>
         </div>
     </div>
-    <h2 id="resultado"></h2>
     <script>
         function calcularPizza() {
             //const tamanhos = [20, 30, 35, 40, 45];
