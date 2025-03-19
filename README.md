@@ -1,5 +1,6 @@
 # Calculadora-de-pizza
-Calculadora feita por puro tédio 
+
+Calculadora feita por puro tédio
 
 ## To-do
 
